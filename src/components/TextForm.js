@@ -38,21 +38,21 @@ export default function TextForm(props) {
     setText(event.target.value);  //setting value of text to whatever written in textarea
   }
 
-  const [text, setText] = useState('Enter text here');
+  const [text, setText] = useState("");
 
   return (
     <>
-    <div className="container">
-        <h1>{props.heading}</h1>
+    <div className="container" style = {{color: props.mode==='dark'?'white':'#052e6b'}}>
+        <h1>{props.heading} </h1>
         <div className="mb-3">
-            <textarea className="form-control" value={text} onChange = {onChangeHandler} id="mybox" rows="3"></textarea>
+            <textarea className="form-control" style = {{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'052e6b'}} value={text} onChange = {onChangeHandler} id="mybox" rows="3"></textarea>
         </div>
         <button className="btn btn-primary mx-1" onClick={handleUpClick}>convert to uppercase</button>
         <button className="btn btn-primary mx-1" onClick={handleLoClick}>convert to lowercase</button>
         <button className="btn btn-warning mx-1" onClick={handleinverse}>inverse case</button>
         <button className="btn btn-warning mx-1" onClick={speakClick}>Speak</button>
     </div>
-    <div className="container my-3 ">
+    <div className="container my-3 " style = {{color: props.mode==='dark'?'white':'#052e6b'}}>
       <h1>Your text summary</h1>
       <p>{text.split(" ").length} words and {text.length} characters</p>
       <p>{0.008 * text.split(" ").length} Minutes read</p>
