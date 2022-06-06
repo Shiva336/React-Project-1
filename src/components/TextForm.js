@@ -38,7 +38,7 @@ export default function TextForm(props) {
     setText(event.target.value);  //setting value of text to whatever written in textarea
   }
 
-  const [text, setText] = useState("");
+  const [text, setText] = useState("enter text here");
 
   return (
     <>
